@@ -1,0 +1,15 @@
+C:\Users\noek07001\Documents\GitHub\Programmering-2-Projekt-VT--26\bin\Debug\net9.0\Programmering-2-Projekt-VT--26.exe
+C:\Users\noek07001\Documents\GitHub\Programmering-2-Projekt-VT--26\bin\Debug\net9.0\Programmering-2-Projekt-VT--26.deps.json
+C:\Users\noek07001\Documents\GitHub\Programmering-2-Projekt-VT--26\bin\Debug\net9.0\Programmering-2-Projekt-VT--26.runtimeconfig.json
+C:\Users\noek07001\Documents\GitHub\Programmering-2-Projekt-VT--26\bin\Debug\net9.0\Programmering-2-Projekt-VT--26.dll
+C:\Users\noek07001\Documents\GitHub\Programmering-2-Projekt-VT--26\bin\Debug\net9.0\Programmering-2-Projekt-VT--26.pdb
+C:\Users\noek07001\Documents\GitHub\Programmering-2-Projekt-VT--26\obj\Debug\net9.0\Programmering-2-Projekt-VT--26.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\noek07001\Documents\GitHub\Programmering-2-Projekt-VT--26\obj\Debug\net9.0\Programmering-2-Projekt-VT--26.AssemblyInfoInputs.cache
+C:\Users\noek07001\Documents\GitHub\Programmering-2-Projekt-VT--26\obj\Debug\net9.0\Programmering-2-Projekt-VT--26.AssemblyInfo.cs
+C:\Users\noek07001\Documents\GitHub\Programmering-2-Projekt-VT--26\obj\Debug\net9.0\Programmering-2-Projekt-VT--26.csproj.CoreCompileInputs.cache
+C:\Users\noek07001\Documents\GitHub\Programmering-2-Projekt-VT--26\obj\Debug\net9.0\Programmering-2-Projekt-VT--26.sourcelink.json
+C:\Users\noek07001\Documents\GitHub\Programmering-2-Projekt-VT--26\obj\Debug\net9.0\Programmering-2-Projekt-VT--26.dll
+C:\Users\noek07001\Documents\GitHub\Programmering-2-Projekt-VT--26\obj\Debug\net9.0\refint\Programmering-2-Projekt-VT--26.dll
+C:\Users\noek07001\Documents\GitHub\Programmering-2-Projekt-VT--26\obj\Debug\net9.0\Programmering-2-Projekt-VT--26.pdb
+C:\Users\noek07001\Documents\GitHub\Programmering-2-Projekt-VT--26\obj\Debug\net9.0\Programmering-2-Projekt-VT--26.genruntimeconfig.cache
+C:\Users\noek07001\Documents\GitHub\Programmering-2-Projekt-VT--26\obj\Debug\net9.0\ref\Programmering-2-Projekt-VT--26.dll
