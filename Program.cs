@@ -32,13 +32,13 @@ class Program
             {
                 Console.WriteLine("Lägg till en bok");
                 Console.Write("Titel: ");
-                string titel = Console.ReadLine();
+                string titel = Console.ReadLine()!;
 
                 Console.Write("Författare: ");
-                string författare = Console.ReadLine();
+                string författare = Console.ReadLine()!;
 
                 Console.Write("Genre: ");
-                string genre = Console.ReadLine();
+                string genre = Console.ReadLine()!;
 
                 try
                 {
