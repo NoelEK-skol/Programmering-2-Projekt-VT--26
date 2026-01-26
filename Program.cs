@@ -6,15 +6,17 @@ class Program
     {
         Library library = new Library();
         bool running = true;
+        DateTime dt1 = DateTime.Now;
         while (running)
         {
         
             Console.WriteLine("[1] Låna bok");
             Console.WriteLine("[2] Lämna tillbaka bok");
             Console.WriteLine("[3] Lägg till en bok");
-            Console.WriteLine("[5] Sök bok");
             Console.WriteLine("[4] Visa alla böcker");
+            Console.WriteLine("[5] Sök bok");
             Console.WriteLine("[6] Avsluta");
+            Console.WriteLine("Böcker i biblioteket: " + library.GetAllBooks().Count); //Antal böcker i biblioteket under en körning
 
             int input = Convert.ToInt32(Console.ReadLine());
             if(input == 1)
@@ -38,12 +40,31 @@ class Program
                 Console.Write("Genre: ");
                 string genre = Console.ReadLine();
 
+                try
+                {
+                    if (string.IsNullOrWhiteSpace(titel) || string.IsNullOrWhiteSpace(författare) || string.IsNullOrWhiteSpace(genre))
+                    {
+                        throw new ArgumentException("Alla fält måste fyllas i.");
+                    }
+                }
+                catch (ArgumentException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    continue;
+                }
                 library.AddBook(new Bok(titel, författare, genre));
+                StreamWriter sw = new StreamWriter("Textfil.txt", true);
+                sw.WriteLine($"{dt1} {titel}, {författare}, {genre}");
+                sw.Close();
+                Console.WriteLine("Din bok har lagts till!");
 
             }
             if(input == 4)
             {
-                Console.WriteLine("Visa alla böcker");
+                Console.WriteLine("Visar alla böcker:");
+                StreamReader sr = new StreamReader("Textfil.txt");
+                Console.WriteLine(sr.ReadToEnd());
+                sr.Close();
             }
             if(input == 5)
             {
