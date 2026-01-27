@@ -2,84 +2,170 @@
 
 class Program
 {
+    static List<User> users = new List<User>
+    {
+        new User("user1", "lösenord")
+    };
+    static User loggedinUser = null!;
+
     static void Main()
     {
         Library library = new Library();
         bool running = true;
         DateTime dt1 = DateTime.Now;
+
         while (running)
         {
-        
-            Console.WriteLine("[1] Låna bok");
-            Console.WriteLine("[2] Lämna tillbaka bok");
-            Console.WriteLine("[3] Lägg till en bok");
-            Console.WriteLine("[4] Visa alla böcker");
-            Console.WriteLine("[5] Sök bok");
-            Console.WriteLine("[6] Avsluta");
-            Console.WriteLine("Böcker i biblioteket: " + library.GetAllBooks().Count); //Antal böcker i biblioteket under en körning
-
-            int input = Convert.ToInt32(Console.ReadLine());
-            if(input == 1)
+            if (loggedinUser == null)
             {
-                Console.WriteLine("Låna bok");
+                ShowStartMenu();
             }
-            if(input == 2)
+            else
             {
-                Console.WriteLine("Lämna tillbaka bok");
 
-            }
-            if(input == 3)
-            {
-                Console.WriteLine("Lägg till en bok");
-                Console.Write("Titel: ");
-                string titel = Console.ReadLine()!;
+                Console.WriteLine("[1] Låna bok");
+                Console.WriteLine("[2] Lämna tillbaka bok");
+                Console.WriteLine("[3] Lägg till en bok");
+                Console.WriteLine("[4] Visa alla böcker");
+                Console.WriteLine("[5] Sök bok");
+                Console.WriteLine("[6] Avsluta");
 
-                Console.Write("Författare: ");
-                string författare = Console.ReadLine()!;
+                Console.WriteLine("[8] Logga ut");
+                Console.WriteLine("[9] Visa alla användare");
 
-                Console.Write("Genre: ");
-                string genre = Console.ReadLine()!;
-
-                try
+                int input = Convert.ToInt32(Console.ReadLine());
+                if (input == 1)
                 {
-                    if (string.IsNullOrWhiteSpace(titel) || string.IsNullOrWhiteSpace(författare) || string.IsNullOrWhiteSpace(genre))
+                    Console.WriteLine("Låna bok");
+                }
+                if (input == 2)
+                {
+                    Console.WriteLine("Lämna tillbaka bok");
+
+                }
+                if (input == 3)
+                {
+                    Console.WriteLine("Lägg till en bok");
+                    Console.Write("Titel: ");
+                    string titel = Console.ReadLine()!;
+
+                    Console.Write("Författare: ");
+                    string författare = Console.ReadLine()!;
+
+                    Console.Write("Genre: ");
+                    string genre = Console.ReadLine()!;
+
+                    try
                     {
-                        throw new ArgumentException("Alla fält måste fyllas i.");
+                        if (string.IsNullOrWhiteSpace(titel) || string.IsNullOrWhiteSpace(författare) || string.IsNullOrWhiteSpace(genre))
+                        {
+                            throw new ArgumentException("Alla fält måste fyllas i.");
+                        }
+                    }
+                    catch (ArgumentException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        continue;
+                    }
+                    library.AddBook(new Bok(titel, författare, genre));
+                    StreamWriter sw = new StreamWriter("Textfil.txt", true);
+                    sw.WriteLine($"{dt1} {titel}, {författare}, {genre}");
+                    sw.Close();
+                    Console.WriteLine("Din bok har lagts till!");
+
+                }
+                if (input == 4)
+                {
+                    Console.WriteLine("Visar alla böcker:");
+                    StreamReader sr = new StreamReader("Textfil.txt");
+                    Console.WriteLine(sr.ReadToEnd());
+                    sr.Close();
+                    Console.WriteLine("Antal böcker i biblioteket: " + library.GetAllBooks().Count); //Antal böcker i biblioteket under en körning
+                    Console.WriteLine("[4] Tillbaka till menyn");
+                    int VisaBöckerInput = Convert.ToInt32(Console.ReadLine());
+                    if (VisaBöckerInput == 4)
+                    {
+                        continue;
                     }
                 }
-                catch (ArgumentException ex)
+                if (input == 5)
                 {
-                    Console.WriteLine(ex.Message);
-                    continue;
+                    Console.WriteLine("Sök bok");
                 }
-                library.AddBook(new Bok(titel, författare, genre));
-                StreamWriter sw = new StreamWriter("Textfil.txt", true);
-                sw.WriteLine($"{dt1} {titel}, {författare}, {genre}");
-                sw.Close();
-                Console.WriteLine("Din bok har lagts till!");
-
-            }
-            if(input == 4)
-            {
-                Console.WriteLine("Visar alla böcker:");
-                StreamReader sr = new StreamReader("Textfil.txt");
-                Console.WriteLine(sr.ReadToEnd());
-                sr.Close();
-            }
-            if(input == 5)
-            {
-                Console.WriteLine("Sök bok");
-            }
-            if(input == 6)
-            {
-                running = false;
-                break;
-            }
-            if(input < 1 || input > 6)
-            {
-                Console.WriteLine("Ogiltigt val, försök igen.");
+                if (input == 6)
+                {
+                    running = false;
+                    break;
+                }
+                if (input < 1 || input > 6 || input == 8 || input == 9)
+                {
+                    Console.WriteLine("Ogiltigt val, försök igen.");
+                }
+                if (input == 8)
+                {
+                    loggedinUser = null!;
+                }
+                if (input == 9)
+                {
+                    Console.WriteLine("Alla användare:");
+                    foreach (var user in users)
+                    {
+                        Console.WriteLine($"Användarnamn: {user.Användarnamn}");
+                    }
+                }
             }
         }
-        
+    }
+
+
+
+
+    static void ShowStartMenu()
+    {
+        Console.WriteLine("[1] Skapa användare");
+        Console.WriteLine("[2] Logga in");
+        Console.WriteLine("[3] Avsluta");
+
+        int input = Convert.ToInt32(Console.ReadLine());
+        if (input == 1)
+        {
+            Console.WriteLine("Användarnamn: ");
+            string användarnamn = Console.ReadLine()!;
+            if (users.Any(u => u.Användarnamn == användarnamn))
+            {
+                Console.WriteLine("Användarnamnet är redan taget, försök igen!");
+                return;
+            }
+
+            Console.WriteLine("Lösenord: ");
+            string lösenord = Console.ReadLine()!;
+            users.Add(new User(användarnamn, lösenord));
+            Console.WriteLine("Användaren skapades!");
+        }
+
+        if (input == 2)
+        {
+            Console.WriteLine("Användarnamn: ");
+            string användarnamn = Console.ReadLine()!;
+
+            Console.WriteLine("Lösenord: ");
+            string lösenord = Console.ReadLine()!;
+
+            loggedinUser = users.Find(u => u.Användarnamn == användarnamn && u.Lösenord == lösenord)!;
+
+            if (loggedinUser != null)
+            {
+                Console.WriteLine("Inloggning lyckades!");
+            }
+            else
+            {
+                Console.WriteLine("Felaktigt användarnamn eller lösenord.");
+            }
+        }
+
+        if (input == 3)
+        {
+            Environment.Exit(0);
+        }
     }
 }
