@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-class Program
+partial class Program
 {
     static List<User> users = new List<User>
     {
@@ -59,7 +59,7 @@ class Program
                     {
                         if (string.IsNullOrWhiteSpace(titel) || string.IsNullOrWhiteSpace(författare) || string.IsNullOrWhiteSpace(genre))
                         {
-                            throw new ArgumentException("Alla fält måste fyllas i.");
+                            throw new ArgumentException("Alla fält måste fyllas i!");
                         }
                     }
                     catch (ArgumentException ex)
@@ -114,58 +114,6 @@ class Program
                     }
                 }
             }
-        }
-    }
-
-
-
-
-    static void ShowStartMenu()
-    {
-        Console.WriteLine("[1] Skapa användare");
-        Console.WriteLine("[2] Logga in");
-        Console.WriteLine("[3] Avsluta");
-
-        int input = Convert.ToInt32(Console.ReadLine());
-        if (input == 1)
-        {
-            Console.WriteLine("Användarnamn: ");
-            string användarnamn = Console.ReadLine()!;
-            if (users.Any(u => u.Användarnamn == användarnamn))
-            {
-                Console.WriteLine("Användarnamnet är redan taget, försök igen!");
-                return;
-            }
-
-            Console.WriteLine("Lösenord: ");
-            string lösenord = Console.ReadLine()!;
-            users.Add(new User(användarnamn, lösenord));
-            Console.WriteLine("Användaren skapades!");
-        }
-
-        if (input == 2)
-        {
-            Console.WriteLine("Användarnamn: ");
-            string användarnamn = Console.ReadLine()!;
-
-            Console.WriteLine("Lösenord: ");
-            string lösenord = Console.ReadLine()!;
-
-            loggedinUser = users.Find(u => u.Användarnamn == användarnamn && u.Lösenord == lösenord)!;
-
-            if (loggedinUser != null)
-            {
-                Console.WriteLine("Inloggning lyckades!");
-            }
-            else
-            {
-                Console.WriteLine("Felaktigt användarnamn eller lösenord.");
-            }
-        }
-
-        if (input == 3)
-        {
-            Environment.Exit(0);
         }
     }
 }
