@@ -8,19 +8,19 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\noele\\.nuget\\packages\\": {}
+    "C:\\Users\\noek07001\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\noele\\OneDrive\\Dokument\\GitHub\\Programmering-2-Projekt-VT--26\\Programmering-2-Projekt-VT--26.csproj",
+      "projectUniqueName": "C:\\Users\\noek07001\\Documents\\GitHub\\Programmering-2-Projekt-VT--26\\Programmering-2-Projekt-VT--26.csproj",
       "projectName": "Programmering-2-Projekt-VT--26",
-      "projectPath": "C:\\Users\\noele\\OneDrive\\Dokument\\GitHub\\Programmering-2-Projekt-VT--26\\Programmering-2-Projekt-VT--26.csproj",
-      "packagesPath": "C:\\Users\\noele\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\noele\\OneDrive\\Dokument\\GitHub\\Programmering-2-Projekt-VT--26\\obj\\",
+      "projectPath": "C:\\Users\\noek07001\\Documents\\GitHub\\Programmering-2-Projekt-VT--26\\Programmering-2-Projekt-VT--26.csproj",
+      "packagesPath": "C:\\Users\\noek07001\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\noek07001\\Documents\\GitHub\\Programmering-2-Projekt-VT--26\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\noele\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\noek07001\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.309/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

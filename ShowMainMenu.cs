@@ -43,9 +43,9 @@ partial class Program
                         throw new ArgumentException("Alla fält måste fyllas i!");
                     }
                 }
-                catch (ArgumentException ex)
+                catch (ArgumentException a)
                 {
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine(a.Message);
                     continue;
                 }
                 library.AddBook(new Bok(titel, författare, genre));

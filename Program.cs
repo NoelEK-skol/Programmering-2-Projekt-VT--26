@@ -13,6 +13,7 @@ partial class Program
 
     static void Main()
     {
+        UserLoggedinLoad();
         while (running)
         {
             if (loggedinUser == null)

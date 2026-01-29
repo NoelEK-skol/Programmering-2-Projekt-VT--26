@@ -11,7 +11,7 @@ partial class Program
         {
             Console.WriteLine("Användarnamn: ");
             string användarnamn = Console.ReadLine()!;
-            if (users.Any(u => u.Användarnamn == användarnamn))
+            if (users.Any(a => a.Användarnamn == användarnamn))
             {
                 Console.WriteLine("Användarnamnet är redan taget, försök igen!");
                 return;
@@ -21,6 +21,10 @@ partial class Program
             string lösenord = Console.ReadLine()!;
             users.Add(new User(användarnamn, lösenord));
             Console.WriteLine("Användaren skapades!");
+
+            StreamWriter sw = new StreamWriter("Users.txt", true);
+            sw.WriteLine($"{användarnamn}, {lösenord}");
+            sw.Close();
         }
 
         if (input == 2)
@@ -31,7 +35,7 @@ partial class Program
             Console.WriteLine("Lösenord: ");
             string lösenord = Console.ReadLine()!;
 
-            loggedinUser = users.Find(u => u.Användarnamn == användarnamn && u.Lösenord == lösenord)!;
+            loggedinUser = users.Find(a => a.Användarnamn == användarnamn && a.Lösenord == lösenord)!;
 
             if (loggedinUser != null)
             {
