@@ -4,15 +4,17 @@ partial class Program
     {
         while (true)
         {
+            Console.WriteLine("______________________");
             Console.WriteLine("[1] Låna bok");
             Console.WriteLine("[2] Lämna tillbaka bok");
             Console.WriteLine("[3] Lägg till en bok");
             Console.WriteLine("[4] Visa alla böcker");
             Console.WriteLine("[5] Sök bok");
-            Console.WriteLine("________");
+            Console.WriteLine(" ");
             Console.WriteLine("[7] Logga ut");
             Console.WriteLine("[8] Visa alla användare");
             Console.WriteLine("[0] Avsluta");
+            Console.WriteLine("______________________");
 
             int input = Convert.ToInt32(Console.ReadLine());
             if (input == 1)
@@ -61,6 +63,21 @@ partial class Program
                 StreamReader sr = new StreamReader("Textfil.txt");
                 Console.WriteLine(sr.ReadToEnd());
                 sr.Close();
+                static void VisaBöcker()     //Ska läsa in böcker från txt och lägga till de i bok listan -> fixa nästa lektion
+                {
+                    string[] lines = File.ReadAllLines("Textfil.txt");
+                    foreach (string line in lines)
+                    {
+                        string[] parts = line.Split(", ");
+                        if(parts.Length == 3)
+                        {
+                        string titel = parts[0];
+                        string författare = parts[1];
+                        string genre = parts[2];
+                        books.Add(new Bok(titel, författare, genre));
+                        }
+                    }
+                }
                 Console.WriteLine("Antal böcker i biblioteket: " + library.GetAllBooks().Count); //Antal böcker i biblioteket under en körning
                 Console.WriteLine("[4] Tillbaka till menyn");
                 int VisaBöckerInput = Convert.ToInt32(Console.ReadLine());

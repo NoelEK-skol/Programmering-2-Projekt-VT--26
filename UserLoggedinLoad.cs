@@ -1,3 +1,5 @@
+using Microsoft.Win32.SafeHandles;
+
 partial class Program
 {
     static void UserLoggedinLoad()
@@ -11,7 +13,7 @@ partial class Program
             {
                 string användarnamn = parts[0];
                 string lösenord = parts[1];
-                loggedinUser = users.Add(new User(användarnamn, lösenord));
+                users.Add(new User(användarnamn, lösenord));
             }
         }
     }
