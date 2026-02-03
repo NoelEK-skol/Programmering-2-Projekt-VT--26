@@ -1,5 +1,11 @@
 partial class Program
 {
+    enum StartMeny
+    {
+        SkapaAnvändare = 1,
+        LoggaIn,
+        Avsluta
+    }
     static void ShowStartMenu()
     {
         Console.WriteLine("[1] Skapa användare");
@@ -7,7 +13,7 @@ partial class Program
         Console.WriteLine("[3] Avsluta");
 
         int input = Convert.ToInt32(Console.ReadLine());
-        if (input == 1)
+        if (input == (int)StartMeny.SkapaAnvändare)
         {
             Console.WriteLine("Användarnamn: ");
             string användarnamn = Console.ReadLine()!;
@@ -27,7 +33,7 @@ partial class Program
             sw.Close();
         }
 
-        if (input == 2)
+        if (input == (int)StartMeny.LoggaIn)
         {
             Console.WriteLine("Användarnamn: ");
             string användarnamn = Console.ReadLine()!;
@@ -47,7 +53,7 @@ partial class Program
             }
         }
 
-        if (input == 3)
+        if (input == (int)StartMeny.Avsluta)
         {
             Environment.Exit(0);
         }

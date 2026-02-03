@@ -1,5 +1,17 @@
 partial class Program
 {
+
+enum Meny
+    {
+        LånaBok = 1,
+        LämnaTillbakaBok,
+        LäggTillBok,
+        VisaAllaBöcker,
+        SökBok,
+        LoggaUt = 7,
+        VisaAllaAnvändare,
+        Avsluta = 0
+    }
     static void ShowMainMenu()
     {
         while (true)
@@ -17,16 +29,17 @@ partial class Program
             Console.WriteLine("______________________");
 
             int input = Convert.ToInt32(Console.ReadLine());
-            if (input == 1)
+            if (input == (int)Meny.LånaBok)
             {
                 Console.WriteLine("Låna bok");
+                LoanBook();
             }
-            if (input == 2)
+            if (input == (int)Meny.LämnaTillbakaBok)
             {
                 Console.WriteLine("Lämna tillbaka bok");
 
             }
-            if (input == 3)
+            if (input == (int)Meny.LäggTillBok)
             {
                 Console.WriteLine("Lägg till en bok");
                 Console.Write("Titel: ");
@@ -57,7 +70,7 @@ partial class Program
                 Console.WriteLine("Din bok har lagts till!");
 
             }
-            if (input == 4)
+            if (input == (int)Meny.VisaAllaBöcker)
             {
                 Console.WriteLine("Visar alla böcker:");
                 StreamReader sr = new("Textfil.txt");
@@ -71,11 +84,11 @@ partial class Program
                     continue;
                 }
             }
-            if (input == 5)
+            if (input == (int)Meny.SökBok)
             {
                 Console.WriteLine("Sök bok");
             }
-            if (input == 0)
+            if (input == (int)Meny.Avsluta)
             {
                 running = false;
                 break;
@@ -84,12 +97,12 @@ partial class Program
             {
                 Console.WriteLine("Ogiltigt val, försök igen.");
             }
-            if (input == 7)
+            if (input == (int)Meny.LoggaUt)
             {
                 loggedinUser = null!;
                 return;
             }
-            if (input == 8)
+            if (input == (int)Meny.VisaAllaAnvändare)
             {
                 Console.WriteLine($"Antal användare: {users.Count}");
                 Console.WriteLine("Alla användare:");
