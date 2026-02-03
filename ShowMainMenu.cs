@@ -60,24 +60,9 @@ partial class Program
             if (input == 4)
             {
                 Console.WriteLine("Visar alla böcker:");
-                StreamReader sr = new StreamReader("Textfil.txt");
+                StreamReader sr = new("Textfil.txt");
                 Console.WriteLine(sr.ReadToEnd());
                 sr.Close();
-                static void VisaBöcker()     //Ska läsa in böcker från txt och lägga till de i bok listan -> fixa nästa lektion
-                {
-                    string[] lines = File.ReadAllLines("Textfil.txt");
-                    foreach (string line in lines)
-                    {
-                        string[] parts = line.Split(", ");
-                        if(parts.Length == 3)
-                        {
-                        string titel = parts[0];
-                        string författare = parts[1];
-                        string genre = parts[2];
-                        books.Add(new Bok(titel, författare, genre));
-                        }
-                    }
-                }
                 Console.WriteLine("Antal böcker i biblioteket: " + library.GetAllBooks().Count); //Antal böcker i biblioteket under en körning
                 Console.WriteLine("[4] Tillbaka till menyn");
                 int VisaBöckerInput = Convert.ToInt32(Console.ReadLine());
@@ -113,7 +98,23 @@ partial class Program
                     Console.WriteLine($"Användarnamn: {user.Användarnamn}");
                 }
             }
-            
+
+        }
+    }
+
+    static void VisaBöcker()     //Läser in böcker från txt och lägga till de i bok listan
+    {
+        string[] lines = File.ReadAllLines("Textfil.txt");
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split(", ");
+            if (parts.Length == 3)
+            {
+                string titel = parts[0];
+                string författare = parts[1];
+                string genre = parts[2];
+                library.AddBook(new Bok(titel, författare, genre));
+            }
         }
     }
 }

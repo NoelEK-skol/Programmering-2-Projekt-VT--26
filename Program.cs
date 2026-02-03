@@ -15,6 +15,7 @@ partial class Program
     static void Main()
     {
         UserLoggedinLoad();
+        VisaBöcker();
         while (running)
         {
             if (loggedinUser == null)
