@@ -7,6 +7,7 @@ partial class Program
         new User("user1", "lösenord")
     };
     static List<Bok> books = new List<Bok>();
+    static List<Loan> loans = new List<Loan>();
     static User loggedinUser = null!;
     static Library library = new Library();
     static bool running = true;
