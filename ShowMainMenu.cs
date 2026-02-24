@@ -20,7 +20,7 @@ enum Meny
             Console.WriteLine("[1] Låna bok");
             Console.WriteLine("[2] Lämna tillbaka bok");
             Console.WriteLine("[3] Lägg till en bok");
-            Console.WriteLine("[4] Visa alla böcker");
+            Console.WriteLine("[4] Visa alla tillgängliga böcker");
             Console.WriteLine("[5] Sök bok");
             Console.WriteLine(" ");
             Console.WriteLine("[7] Logga ut");
