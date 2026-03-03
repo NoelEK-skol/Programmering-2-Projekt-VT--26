@@ -27,6 +27,7 @@ partial class Program
         loans.Add(new Loan(loggedinUser.Användarnamn, selectedBook));
         library.GetAllBooks().Remove(selectedBook);
         SaveBook();
+        SaveLoans();
         Console.WriteLine($"Du ({loggedinUser.Användarnamn}) har lånat: {selectedBook.Titel}!");
     }
 }

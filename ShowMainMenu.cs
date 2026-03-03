@@ -22,6 +22,7 @@ enum Meny
             Console.WriteLine("[3] Lägg till en bok");
             Console.WriteLine("[4] Visa alla tillgängliga böcker");
             Console.WriteLine("[5] Sök bok");
+            Console.WriteLine("[6] Visa mina lån");
             Console.WriteLine(" ");
             Console.WriteLine("[7] Logga ut");
             Console.WriteLine("[8] Visa alla användare");
@@ -88,6 +89,12 @@ enum Meny
             {
                 Console.WriteLine("Sök bok");
             }
+            if (input == 6)
+            {
+                Console.WriteLine("Visa mina lån");
+                ShowMyLoan();
+            }
+
             if (input == (int)Meny.Avsluta)
             {
                 running = false;
