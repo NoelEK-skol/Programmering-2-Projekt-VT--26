@@ -57,6 +57,5 @@ partial class Program
         {
             Environment.Exit(0);
         }
-    }
-    
+    }   
 }

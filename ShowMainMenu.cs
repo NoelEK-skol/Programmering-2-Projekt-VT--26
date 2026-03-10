@@ -8,6 +8,7 @@ enum Meny
         LäggTillBok,
         VisaAllaBöcker,
         SökBok,
+        VisaMinaLån,
         LoggaUt = 7,
         VisaAllaAnvändare,
         Avsluta = 0
@@ -89,7 +90,7 @@ enum Meny
             {
                 Console.WriteLine("Sök bok");
             }
-            if (input == 6)
+            if (input == (int)Meny.VisaMinaLån)
             {
                 Console.WriteLine("Visa mina lån");
                 ShowMyLoan();

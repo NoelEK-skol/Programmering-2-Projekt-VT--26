@@ -17,6 +17,7 @@ partial class Program
     {
         UserLoggedinLoad();
         VisaBöcker();
+        LoadLoans();
         while (running)
         {
             if (loggedinUser == null)
