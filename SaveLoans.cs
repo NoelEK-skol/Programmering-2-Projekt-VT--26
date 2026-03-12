@@ -7,7 +7,7 @@ partial class Program
         StreamWriter sr = new StreamWriter("loans.txt");
         foreach (var loan in loans)
         {
-            sr.WriteLine($"{loan.UserName}, {loan.Book.Titel}, {loan.Book.Författare}");
+            sr.WriteLine($"{loan.UserName}, {loan.Book.Titel}, {loan.Book.Författare}, {loan.Status}");
         }
         sr.Close();
     }

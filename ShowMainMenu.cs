@@ -39,6 +39,7 @@ enum Meny
             if (input == (int)Meny.LämnaTillbakaBok)
             {
                 Console.WriteLine("Lämna tillbaka bok");
+                ReturnBook();
 
             }
             if (input == (int)Meny.LäggTillBok)

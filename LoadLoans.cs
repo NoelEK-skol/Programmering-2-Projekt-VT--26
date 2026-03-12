@@ -1,3 +1,6 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
 partial class Program
 {
     static void LoadLoans()
@@ -8,14 +11,18 @@ partial class Program
         {
             string line = sr.ReadLine()!;
             parts = line.Split(", ");
-            if(parts.Length == 3)
+            if(parts.Length == 4)
             {
                 string användarnamn = parts[0];
                 string titel = parts[1];
                 string författare = parts[2];
+                Loan.LoanStatus status = Enum.Parse<LoanStatus>(parts[3]);
 
                 Bok book = new Bok(titel, författare, "");
-                loans.Add(new Loan(användarnamn, book));
+                Loan loan = new Loan(användarnamn, book);
+
+                loan.Status = status;
+                loans.Add(loan);
             }
         }
         sr.Close();
