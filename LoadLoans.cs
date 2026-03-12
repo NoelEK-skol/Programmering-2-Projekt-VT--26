@@ -16,7 +16,7 @@ partial class Program
                 string användarnamn = parts[0];
                 string titel = parts[1];
                 string författare = parts[2];
-                Loan.LoanStatus status = Enum.Parse<LoanStatus>(parts[3]);
+                Loan.LoanStatus status = Enum.Parse<Loan.LoanStatus>(parts[3]);
 
                 Bok book = new Bok(titel, författare, "");
                 Loan loan = new Loan(användarnamn, book);

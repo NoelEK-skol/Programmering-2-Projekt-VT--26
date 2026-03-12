@@ -23,7 +23,6 @@ partial class Program
         Loan loan = myLoans[svar - 1];
         loan.ReturnBook();
         library.GetAllBooks().Add(loan.Book);
-        loans.Remove(loan);
         SaveLoans();
         Console.WriteLine($"Du har lämnat tillbaka {loan.Book.Titel} av {loan.Book.Författare}!");
     }
