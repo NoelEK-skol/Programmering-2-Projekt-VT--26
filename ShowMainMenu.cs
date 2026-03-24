@@ -9,7 +9,7 @@ enum Meny
         VisaAllaBöcker,
         SökBok,
         VisaMinaLån,
-        LoggaUt = 7,
+        LoggaUt,
         VisaAllaAnvändare,
         Avsluta = 0
     }
@@ -68,7 +68,7 @@ enum Meny
                 }
                 library.AddBook(new Bok(titel, författare, genre));
                 StreamWriter sw = new StreamWriter("Textfil.txt", true);
-                sw.WriteLine($"{dt1} {titel}, {författare}, {genre}");
+                sw.WriteLine($"{titel}, {författare}, {genre}");
                 sw.Close();
                 Console.WriteLine("Din bok har lagts till!");
 
