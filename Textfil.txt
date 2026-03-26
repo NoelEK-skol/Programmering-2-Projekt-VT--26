@@ -1,9 +1,7 @@
 asfc, asc, ABC
 AA, CC, BBB
 Matte 4, Larare, Matematik
-AA, CC, AAA
 Boken om Programmering, Programmeraren, Utbildning
 nolles stora historia , Anton, Fantasy
-v, C, b
 Harry Potter, Nagon, Fantasy
-a, f, g
+AA, CC, AAA
