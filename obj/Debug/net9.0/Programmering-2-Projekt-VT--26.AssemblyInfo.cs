@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Programmering-2-Projekt-VT--26")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7931dd06369ebff86ef32a8e87e0183a3b6f44b6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f579fbf1f54a23dc1fc4db63fff52a5e7f655b1f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Programmering-2-Projekt-VT--26")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Programmering-2-Projekt-VT--26")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

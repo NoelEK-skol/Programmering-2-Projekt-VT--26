@@ -6,7 +6,7 @@ partial class Program
         Console.WriteLine("Sök efter bok:");
         string sökning = Console.ReadLine();
 
-        Console.WriteLine("Böcker som hittades:");
+        Console.WriteLine("Böcker som hittades:"); //ifall filen innehåller
         foreach (string a in File.ReadLines(fil))
         {
             if (a.Contains(sökning))
@@ -14,7 +14,7 @@ partial class Program
                 Console.WriteLine(a);
             }
         }
-        if(!File.ReadLines(fil).Any(line => line.Contains(sökning)))
+        if(!File.ReadLines(fil).Any(line => line.Contains(sökning))) //ifall filen inte innehåller
         {
             Console.WriteLine("Ingen bok hittades");
         }
