@@ -89,7 +89,6 @@ enum Meny
             }
             if (input == (int)Meny.SökBok)
             {
-                Console.WriteLine("Sök bok");
                 SearchBook();
             }
             if (input == (int)Meny.VisaMinaLån)

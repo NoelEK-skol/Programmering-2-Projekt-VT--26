@@ -1,10 +1,8 @@
-class User
+class User : Person
 {
-    public string Användarnamn { get; set; }
     public string Lösenord { get; set; }
-    public User(string användarnamn, string lösenord)
+    public User(string användarnamn, string lösenord) : base(användarnamn)
     {
-        Användarnamn = användarnamn;
         Lösenord = lösenord;
     }
 }

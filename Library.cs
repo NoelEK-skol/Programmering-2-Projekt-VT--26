@@ -1,6 +1,6 @@
 public class Library
 {
-    private List<Bok> böcker;
+    protected List<Bok> böcker;
 
     public Library()
     {
@@ -11,6 +11,7 @@ public class Library
     {
         böcker.Add(bok);
     }
+
 
     public List<Bok> GetAllBooks()
     {

@@ -1,13 +1,14 @@
-public class Bok
+public class Bok : LibraryBas
 {
-    public string Titel { get; set; }
-    public string Författare { get; set; }
     public string Genre { get; set; }
 
-    public Bok(string titel, string författare, string genre)
+    public Bok(string titel, string författare, string genre) : base(titel, författare)
     {
-        Titel = titel;
-        Författare = författare;
         Genre = genre;
+    }
+
+    public override string Info()
+    {
+        return $"{Titel} av {Författare} {Genre}";
     }
 }
