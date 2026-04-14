@@ -1,6 +1,7 @@
 Matte 4, Larare, Matematik
 Boken om Programmering, Programmeraren, Utbildning
-sfd, sdf, 
-asfc, asc, 
+sfd, sdf, asd
+asfc, asc, scsd
 Harry Potter, Nagon, Fantasy
 Religionkunskap 1, Munken, 
+Byggarboken, Bob, Bygg
