@@ -6,8 +6,8 @@ partial class Program
         {
             string fil = "Textfil.txt";
             bool hittad = false;
-            Console.WriteLine("Sök efter bok:");
-            string sökning = Console.ReadLine();
+            Console.Write("Sök efter bok: ");
+            string sökning = Console.ReadLine()!;
 
             if (string.IsNullOrWhiteSpace(sökning))
             {

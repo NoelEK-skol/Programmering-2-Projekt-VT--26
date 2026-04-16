@@ -15,7 +15,7 @@ partial class Program
         int input = Convert.ToInt32(Console.ReadLine());
         if (input == (int)StartMeny.SkapaAnvändare)
         {
-            Console.WriteLine("Användarnamn: ");
+            Console.Write("Användarnamn: ");
             string användarnamn = Console.ReadLine()!;
             if (users.Any(a => a.Användarnamn == användarnamn))
             {
@@ -23,7 +23,7 @@ partial class Program
                 return;
             }
 
-            Console.WriteLine("Lösenord: ");
+            Console.Write("Lösenord: ");
             string lösenord = Console.ReadLine()!;
             users.Add(new User(användarnamn, lösenord));
             Console.WriteLine("Användaren skapades!");
@@ -35,10 +35,10 @@ partial class Program
 
         if (input == (int)StartMeny.LoggaIn)
         {
-            Console.WriteLine("Användarnamn: ");
+            Console.Write("Användarnamn: ");
             string användarnamn = Console.ReadLine()!;
 
-            Console.WriteLine("Lösenord: ");
+            Console.Write("Lösenord: ");
             string lösenord = Console.ReadLine()!;
 
             loggedinUser = users.Find(a => a.Användarnamn == användarnamn && a.Lösenord == lösenord)!;
